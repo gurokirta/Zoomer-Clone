@@ -1,1 +1,2 @@
-# Zoomer-Clone
+# Final project
+# this is Zoomer Clone
