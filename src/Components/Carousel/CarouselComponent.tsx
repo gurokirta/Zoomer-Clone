@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { Ajax } from "../../utils/Ajax";
-import ProductItem from "./ProductIItem/ProductItem";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-const ProductSection = () => {
+// import { Carousel } from "react-responsive-carousel";
+import { Ajax } from "../../Utils/Ajax";
+
+const CarouselComponent = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
 
   const fetchProduct = async () => {
     try {
       const data = {
-        page_size: 15,
+        page_size: 5,
         page: 1,
         keyword: "",
       };
@@ -26,9 +28,13 @@ const ProductSection = () => {
 
   return (
     <div>
-      <ProductItem products={products} />
+      {products.map(product => (
+        <Link to={`/product/${product.id}`}>
+          <img src={product.images[0]} key={product.images[0]} />
+        </Link>
+      ))}
     </div>
   );
 };
 
-export default ProductSection;
+export default CarouselComponent;
