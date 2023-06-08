@@ -12,10 +12,9 @@ function App() {
   return (
     <>
       <Navigation />
-      <CarouselComponent />
       <Routes>
         <Route path="/" element={<ProductSection />} />
-        <Route path="/ProductDetail/:id" element={<ProductDetail />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
       </Routes>
     </>
   );

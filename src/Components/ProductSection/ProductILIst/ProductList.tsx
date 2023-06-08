@@ -26,7 +26,10 @@ const ProductList = ({ products }: { products: ProductType[] }) => {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
+              justifyContent: "center",
               gap: "20px",
+              height: "420px",
+              color: "black",
             }}
           >
             <Box>
@@ -34,6 +37,7 @@ const ProductList = ({ products }: { products: ProductType[] }) => {
             </Box>
             <Box>{product.title}</Box>
             <Box>{product.price}</Box>
+            <Box>{product.brand}</Box>
           </Box>
         </Link>
       ))}

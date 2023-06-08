@@ -9,3 +9,7 @@ type ProductType = {
   rating: string;
   amount: string;
 };
+
+type BrandsType = {
+  brands: string[];
+};

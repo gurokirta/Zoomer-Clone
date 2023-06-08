@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 import { Box, Typography, TextField } from "@mui/material";
 
 import "./Navigation.styles.scss";
@@ -106,9 +108,11 @@ const Navigation = () => {
           marginRight: "20px",
         }}
       >
-        <Box className="main__logo">
-          <img src="/src/assets/icons/logo.svg" alt="logo" />
-        </Box>
+        <Link to="/">
+          <Box className="main__logo">
+            <img src="/src/assets/icons/logo.svg" alt="logo" />
+          </Box>
+        </Link>
         <Box
           sx={{
             display: "flex",

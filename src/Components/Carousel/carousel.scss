@@ -1,0 +1,39 @@
+.carousel {
+  position: relative;
+  width: 100%;
+}
+
+.imageContainer {
+  display: flex;
+  overflow: hidden;
+}
+
+.img {
+  flex-shrink: 0;
+  width: 100%;
+  transition: opacity 0.5s;
+  opacity: 0.5;
+}
+
+.img.active {
+  opacity: 1;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
+}

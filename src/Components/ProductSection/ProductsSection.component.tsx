@@ -27,6 +27,7 @@ const ProductSection = () => {
 
   return (
     <div>
+      <CarouselComponent />
       <ProductList products={products} />
     </div>
   );
