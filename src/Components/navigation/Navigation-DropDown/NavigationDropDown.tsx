@@ -1,9 +1,8 @@
 import * as React from "react";
 
 import { Box } from "@mui/material";
-import { Ajax } from "../../utils/Ajax";
+import { Ajax } from "../../../utils/Ajax";
 import { useState, useEffect } from "react";
-import axios from "axios";
 
 import "./NavigationDropDown.scss";
 

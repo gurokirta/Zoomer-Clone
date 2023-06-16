@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Ajax } from "../../utils/Ajax";
-import CarouselComponent from "../Carousel/CarouselComponent";
-import ProductList from "./ProductILIst/ProductList";
+import { Ajax } from "../../../utils/Ajax";
+import { CarouselItem } from "../Carousel/CarouselComponent";
+import ProductList from "../../../Pages/Home/ProductList";
 
 const ProductSection = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
@@ -27,7 +27,8 @@ const ProductSection = () => {
 
   return (
     <div>
-      <CarouselComponent />
+      {/* <CarouselComponent /> */}
+      <CarouselItem />
       <ProductList products={products} />
     </div>
   );

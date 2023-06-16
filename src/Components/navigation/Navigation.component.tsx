@@ -7,6 +7,8 @@ import { Box, Typography, TextField } from "@mui/material";
 import "./Navigation.styles.scss";
 import NavigationDropDown from "./Navigation-DropDown/NavigationDropDown";
 import NavigationDropDownHover from "./Navigation-DropDownHover/NavigationDropDownHover";
+import BasicModal from "./Modal/Modal";
+import Modal from "./Modal/Modal";
 
 const Navigation = () => {
   return (
@@ -120,18 +122,10 @@ const Navigation = () => {
             position: "relative",
           }}
         >
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <TextField
-              className="search__input"
-              label="ძიება..."
-              sx={{
-                width: "780px",
-                height: "50px",
-              }}
-            />
-          </Box>
+          <Modal />
           <Box
             sx={{
+              marginTop: "10px",
               display: "flex",
               alignItems: "center",
               position: "absolute",
@@ -145,23 +139,7 @@ const Navigation = () => {
                 gap: "20px",
                 justifyContent: "space-between",
               }}
-            >
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "20px",
-                }}
-              >
-                <NavigationDropDown />
-
-                <img
-                  src="/src/assets/icons/search.svg"
-                  alt="search"
-                  className="search__icon"
-                />
-              </Box>
-            </Box>
+            ></Box>
           </Box>
         </Box>
         <Box
