@@ -40,7 +40,7 @@ export const CarouselItem = () => {
 
   return (
     <>
-      <Carousel autoPlay interval={2000} infiniteLoop>
+      <Carousel autoPlay interval={2000} showThumbs={false} infiniteLoop>
         {carouselProducts.map(product => (
           <Link to={`/product/${product.id}`} key={product.id}>
             <div>

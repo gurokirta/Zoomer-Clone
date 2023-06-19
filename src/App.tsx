@@ -7,8 +7,8 @@ import "./App.scss";
 import { Route, Routes } from "react-router-dom";
 
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
-import ProductSection from "./Components/navigation/ProductSection/ProductsSection.component";
-import Navigation from "./Components/navigation/Navigation.component";
+import ProductSection from "./components/navigation/ProductSection/ProductsSection.component";
+import Navigation from "./components/navigation/Navigation.component";
 
 function App() {
   return (

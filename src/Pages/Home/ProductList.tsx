@@ -1,10 +1,16 @@
-import { Box } from "@mui/system";
-import React from "react";
+import React, { VoidFunctionComponent } from "react";
 import { Link } from "react-router-dom";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 import "./ProductList.scss";
+import { Box, Button } from "@mui/material";
 
-const ProductList = ({ products }: { products: ProductType[] }) => {
+type ProductProps = {
+  products: Product[];
+  handleButtonClick: () => void;
+};
+
+const ProductList = ({ products, handleButtonClick }: ProductProps) => {
   return (
     <Box
       sx={{
@@ -15,7 +21,7 @@ const ProductList = ({ products }: { products: ProductType[] }) => {
       }}
     >
       {products.map(product => (
-        <Link to={`/product/${product.id}`} key={product.id}>
+        <Box key={product.id}>
           <div className="product_label">
             ზუმერული ფასები
             <div className="product_label_after"></div>
@@ -37,29 +43,45 @@ const ProductList = ({ products }: { products: ProductType[] }) => {
               color: "black",
             }}
           >
-            <Box>
+            <Link to={`/product/${product.id}`} key={product.id}>
               <img src={product.images[0]} alt="" className="prod-img" />
-            </Box>
+
+              <Box
+                sx={{
+                  fontSize: "12px",
+                }}
+                onClick={() => console.log(product.brand)}
+              >
+                {product.title}
+              </Box>
+            </Link>
             <Box
               sx={{
-                fontSize: "12px",
-              }}
-              onClick={() => console.log(product.brand)}
-            >
-              {product.title}
-            </Box>
-            <Box
-              sx={{
-                color: "#fb7613",
-                fontWeight: "600",
-                fontSize: "17px",
+                display: "flex",
+                gap: "20px",
               }}
             >
-              {parseFloat(product.price.toString()).toFixed(2)} ₾
+              <Box
+                sx={{
+                  color: "#fb7613",
+                  fontWeight: "600",
+                  fontSize: "17px",
+                }}
+              >
+                {parseFloat(product.price.toString()).toFixed(2)} ₾
+              </Box>
+              <Box
+                sx={{
+                  fontSize: "17px",
+                }}
+              >
+                <AddShoppingCartIcon />
+              </Box>
             </Box>
           </Box>
-        </Link>
+        </Box>
       ))}
+      <Button onClick={handleButtonClick}>Load more</Button>
     </Box>
   );
 };

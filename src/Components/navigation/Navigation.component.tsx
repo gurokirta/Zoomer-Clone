@@ -2,12 +2,12 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-import { Box, Typography, TextField } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 import "./Navigation.styles.scss";
-import NavigationDropDown from "./Navigation-DropDown/NavigationDropDown";
+
 import NavigationDropDownHover from "./Navigation-DropDownHover/NavigationDropDownHover";
-import BasicModal from "./Modal/Modal";
+
 import Modal from "./Modal/Modal";
 
 const Navigation = () => {

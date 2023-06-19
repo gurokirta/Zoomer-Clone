@@ -1,35 +1,26 @@
-import React, { useState, useEffect } from "react";
-import { Ajax } from "../../../utils/Ajax";
+import React, { useEffect } from "react";
+
+import { useStore } from "../../../zustand/store";
+
 import { CarouselItem } from "../Carousel/CarouselComponent";
 import ProductList from "../../../Pages/Home/ProductList";
 
 const ProductSection = () => {
-  const [products, setProducts] = useState<ProductType[]>([]);
+  const { fetchProduct, products, increasePageSize } = useStore();
 
-  const fetchProduct = async () => {
-    try {
-      const data = {
-        page_size: 15,
-        page: 1,
-        keyword: "",
-      };
-      const response = await Ajax.post("/products", data);
-      const { products } = await response.data;
-      setProducts(products);
-    } catch (error) {
-      console.log(error);
-    }
+  const handleButtonClick = () => {
+    increasePageSize();
+    fetchProduct();
   };
 
   useEffect(() => {
     fetchProduct();
-  }, []);
+  }, [fetchProduct]);
 
   return (
     <div>
-      {/* <CarouselComponent /> */}
       <CarouselItem />
-      <ProductList products={products} />
+      <ProductList products={products} handleButtonClick={handleButtonClick} />
     </div>
   );
 };
