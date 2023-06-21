@@ -18,7 +18,7 @@ type Product = {
   category: string;
   price: number;
   rating: string;
-  amount: string;
+  amount: number;
 };
 
 type Brand = string;
@@ -26,9 +26,12 @@ type Brand = string;
 type ProductStore = {
   products: Product[];
   brands: Brand[];
+  cartItems: Product[];
   initialPageSize: number;
   increasePageSize: () => void;
-  fetchProduct: (keyword: string) => void;
+  fetchProduct: (keyword?: string) => void;
   fetchBrands: () => void;
-  searchProduct: (keyword: string) => void;
+  setCartItems: (product: Product) => void;
+  removeFromCart: (itemId: string) => void;
+  getTotalPrice: () => void;
 };

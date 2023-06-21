@@ -1,9 +1,14 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
+
+import { useStore } from "../../../zustand/store";
 
 import "./NavigationDropDownHover.styles.scss";
 
 const NavigationDropDownHover = () => {
+  const { cartItems, getTotalPrice } = useStore();
+
   return (
     <>
       <Box
@@ -16,7 +21,7 @@ const NavigationDropDownHover = () => {
         className="right-menu"
       >
         <img src="/src/assets/icons/cart.svg" alt="cart" />
-        <button className="cart-button">0 ლ</button>
+        <button className="cart-button">{getTotalPrice()}ლ</button>
         <Box
           sx={{
             position: "absolute",
@@ -55,6 +60,9 @@ const NavigationDropDownHover = () => {
               <Box
                 sx={{
                   display: "flex",
+                  gap: "30px",
+                  alignItems: "center",
+                  alignContent: "center",
                 }}
               >
                 <Typography
@@ -71,7 +79,9 @@ const NavigationDropDownHover = () => {
                 >
                   კალათა
                 </Typography>
+                <div>{cartItems.length}</div>
               </Box>
+
               <Box
                 sx={{
                   display: "flex",
@@ -89,8 +99,10 @@ const NavigationDropDownHover = () => {
                     cursor: "pointer",
                   }}
                 >
-                  0 ლ
+                  ლ
                 </Typography>
+
+                <p>{getTotalPrice()} ლ</p>
                 <Typography
                   sx={{
                     fontSize: "12px",
@@ -111,7 +123,9 @@ const NavigationDropDownHover = () => {
                   cursor: "pointer",
                 }}
               >
-                <button className="in-cart-button">კალათაში გადასვლა</button>
+                <Link to="/cart">
+                  <button className="in-cart-button">კალათაში გადასვლა</button>
+                </Link>
               </Box>
             </Box>
           </Box>

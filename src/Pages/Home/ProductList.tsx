@@ -4,6 +4,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 import "./ProductList.scss";
 import { Box, Button } from "@mui/material";
+import { useStore } from "../../zustand/store";
 
 type ProductProps = {
   products: Product[];
@@ -11,6 +12,12 @@ type ProductProps = {
 };
 
 const ProductList = ({ products, handleButtonClick }: ProductProps) => {
+  const { setCartItems, cartItems } = useStore();
+
+  const handleAddToCart = (product: Product) => {
+    setCartItems(product);
+    console.log(cartItems);
+  };
   return (
     <Box
       sx={{
@@ -75,7 +82,9 @@ const ProductList = ({ products, handleButtonClick }: ProductProps) => {
                   fontSize: "17px",
                 }}
               >
-                <AddShoppingCartIcon />
+                <Button onClick={() => handleAddToCart(product)}>
+                  <AddShoppingCartIcon />
+                </Button>
               </Box>
             </Box>
           </Box>
