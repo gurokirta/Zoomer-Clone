@@ -5,9 +5,9 @@ import { Box } from "@mui/material";
 // import { Ajax } from "../../../utils/Ajax";
 import { useEffect } from "react";
 
-import "./NavigationDropDown.scss";
+import "./Brands.scss";
 
-export default function NavigationDropDown() {
+export default function Brands() {
   const { fetchBrands, brands } = useStore();
 
   useEffect(() => {

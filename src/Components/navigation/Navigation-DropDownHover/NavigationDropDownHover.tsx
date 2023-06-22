@@ -102,7 +102,7 @@ const NavigationDropDownHover = () => {
                   ლ
                 </Typography>
 
-                <p>{getTotalPrice()} ლ</p>
+                <p>{getTotalPrice()} </p>
                 <Typography
                   sx={{
                     fontSize: "12px",

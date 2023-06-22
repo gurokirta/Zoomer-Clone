@@ -1,17 +1,24 @@
-import React from "react";
-
-// import Navigation from "./Components/Navigation.component";
+import React, { useEffect } from "react";
 
 import "./App.scss";
-// import ProductSection from "./Components/ProductSection/ProductsSection.component";
-import { Route, Routes } from "react-router-dom";
+
+import { Route, Routes, useNavigate } from "react-router-dom";
 
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
 import ProductSection from "./components/navigation/ProductSection/ProductsSection.component";
 import Navigation from "./components/navigation/Navigation.component";
 import Cart from "./Pages/Cart/Cart";
+import User from "./Pages/User/User";
+
+import { isUserAuthenticated } from "./Utils/Helpers";
 
 function App() {
+  const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   if (!isUserAuthenticated()) navigate("/");
+  // }, [isUserAuthenticated()]);
+
   return (
     <>
       <Navigation />
@@ -19,6 +26,7 @@ function App() {
         <Route path="/" element={<ProductSection />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/user" element={<User />} />
       </Routes>
     </>
   );

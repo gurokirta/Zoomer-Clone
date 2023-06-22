@@ -8,7 +8,8 @@ import "./Navigation.styles.scss";
 
 import NavigationDropDownHover from "./Navigation-DropDownHover/NavigationDropDownHover";
 
-import Modal from "./Modal/Modal";
+import Modal from "./SearchBar/SearchBar";
+import AuthModal from "./authModal/AuthModal";
 
 const Navigation = () => {
   return (
@@ -149,28 +150,13 @@ const Navigation = () => {
             gap: "20px",
           }}
         >
+          <AuthModal />
           <Box
             sx={{
               display: "flex",
               alignItems: "center",
               gap: "10px",
-            }}
-          >
-            <img src="/src/assets/icons/profileLogo.svg" alt="user" />
-            <Typography
-              sx={{
-                color: "#0a3251",
-              }}
-            >
-              პროფილი
-            </Typography>
-          </Box>
-
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              gap: "10px",
+              marginRight: "10px",
             }}
           >
             <NavigationDropDownHover />

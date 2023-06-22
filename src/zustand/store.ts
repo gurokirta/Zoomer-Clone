@@ -75,4 +75,16 @@ export const useStore = create<ProductStore>(set => ({
     }
     return totalPrice;
   },
+
+  ////////////////////
+  // firstName: "",
+  // lastName: "",
+  // phoneNumber: "",
+  // email: "",
+  // password: "",
+  // setFirstName: firstName => set({ firstName }),
+  // setLastName: lastName => set({ lastName }),
+  // setPhoneNumber: phoneNumber => set({ phoneNumber }),
+  // setEmail: email => set({ email }),
+  // setPassword: password => set({ password }),
 }));

@@ -1,4 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
+
 import React from "react";
 
 import { useStore } from "../../zustand/store";
@@ -46,6 +47,8 @@ const Cart = () => {
               >
                 <Typography>{item.title}</Typography>
                 <Typography>{item.amount}</Typography>
+                <Typography>{item.price}</Typography>
+                <Typography>{item.price * item.amount}</Typography>
               </Box>
             ))}
           </Box>
@@ -62,7 +65,6 @@ const Cart = () => {
           }}
         >
           <Typography>ჯამი :</Typography>
-          <Typography>{getTotalPrice()}</Typography>
         </Box>
         <Box
           sx={{
@@ -72,8 +74,8 @@ const Cart = () => {
             marginTop: "30px",
           }}
         >
-          <Typography>სულ თანხა :</Typography>
-          <Typography>ჯამი :</Typography>
+          <Typography>სულ თანხა : {getTotalPrice()} ლ</Typography>
+          <Typography>ჯამი : {getTotalPrice()} ლ</Typography>
           <Button>გადახდა</Button>
         </Box>
       </Box>

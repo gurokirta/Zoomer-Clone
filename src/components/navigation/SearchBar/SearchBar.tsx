@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import { useStore } from "../../../zustand/store";
 
 import { Button, TextField } from "@mui/material";
-import NavigationDropDown from "../Navigation-DropDown/NavigationDropDown";
+
 import { useEffect } from "react";
 
 export default function searchBar() {
@@ -42,6 +42,7 @@ export default function searchBar() {
               width: "780px",
               height: "50px",
             }}
+            type="search"
           />
           <Box
             sx={{
@@ -52,8 +53,6 @@ export default function searchBar() {
               right: 0,
             }}
           >
-            <NavigationDropDown />
-
             <Button onClick={handleSearch}>
               <img
                 src="/src/assets/icons/search.svg"
